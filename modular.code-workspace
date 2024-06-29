@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "Core",
+      "path": "modular_core"
+    },
+    {
+      "name": "Shelf",
+      "path": "shelf_modular"
+    },
+    {
+      "name": "Flutter",
+      "path": "modular_beyond"
+    },
+    {
+      "name": "Documentation",
+      "path": "doc"
+    }
+  ]
+}

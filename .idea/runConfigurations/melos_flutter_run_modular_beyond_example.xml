@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Flutter Run -&gt; 'modular_beyond_example'" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="filePath" value="$PROJECT_DIR$/modular_beyond/example/lib/main.dart" />
+    <method v="2" />
+  </configuration>
+</component>

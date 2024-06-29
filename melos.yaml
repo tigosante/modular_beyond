@@ -1,0 +1,15 @@
+name: modular
+repository: https://github.com/Flutterando/modular
+
+ignore:
+  - deprecated/**
+
+packages:
+  - modular_core
+  - modular_beyond
+  # examples
+  - modular_beyond/example
+
+scripts:
+  tests: melos exec --ignore="*example" --ignore="modular_*_bind" -- flutter test --coverage
+  clean: melos exec flutter clean
