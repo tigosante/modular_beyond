@@ -1,6 +1,6 @@
 name: modular_beyond
 description: Smart project structure with dependency injection and route management
-homepage: https://github.com/Flutterando/modular
+homepage:
 
 environment:
   sdk: ">=2.18.0 <3.0.0"

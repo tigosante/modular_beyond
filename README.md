@@ -9,7 +9,7 @@ If it's for the Flutterando version of the template just send a message to us (o
 *** Thanks for your support!
 -->
 
-  <h1 align="center">Flutter Modular</h1>
+  <h1 align="center">Modular Beyond</h1>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -23,7 +23,7 @@ If it's for the Flutterando version of the template just send a message to us (o
 
   <br />
   <p align="center">
-    Welcome to Flutter Modular!
+    Welcome to Modular Beyond!
     A smart project structure.
     <br>
     <br>

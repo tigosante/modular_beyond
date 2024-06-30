@@ -5,7 +5,7 @@
 [![GitHub stars](https://badgen.net/github/stars/Flutterando/modular)](https://GitHub.com/Flutterando/modular/stargazers/)
 [![All Contributors](https://img.shields.io/badge/all_contributors-46-orange.svg?style=flat-square)](#contributors-)
 
-## Flutter Modular
+## Modular Beyond
 
 ![modular_beyond](https://raw.githubusercontent.com/Flutterando/modular/master/modular_beyond.png)
 
