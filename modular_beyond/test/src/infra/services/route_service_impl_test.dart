@@ -1,7 +1,7 @@
-import 'package:modular_beyond/src/domain/dtos/route_dto.dart';
-import 'package:modular_beyond/src/infra/services/route_service_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:modular_beyond/src/domain/dtos/route_dto.dart';
+import 'package:modular_beyond/src/infra/services/route_service_impl.dart';
 import 'package:modular_core/modular_core.dart';
 
 import '../../mocks/mocks.dart';

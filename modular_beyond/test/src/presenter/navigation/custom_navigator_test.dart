@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:modular_beyond/src/presenter/models/modular_navigator.dart';
 import 'package:modular_beyond/src/presenter/modular_base.dart';
 import 'package:modular_beyond/src/presenter/navigation/custom_navigator.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 
 class ModularBaseMock extends Mock implements IModularBase {}
 

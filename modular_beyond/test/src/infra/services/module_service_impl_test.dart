@@ -1,6 +1,6 @@
-import 'package:modular_beyond/src/infra/services/module_service_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:modular_beyond/src/infra/services/module_service_impl.dart';
 import 'package:modular_core/modular_core.dart';
 import 'package:result_dart/result_dart.dart';
 

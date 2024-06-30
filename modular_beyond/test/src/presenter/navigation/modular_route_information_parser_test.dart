@@ -3,6 +3,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:modular_beyond/modular_beyond.dart';
 import 'package:modular_beyond/src/domain/dtos/route_dto.dart';
 import 'package:modular_beyond/src/domain/usecases/get_arguments.dart';
@@ -14,8 +16,6 @@ import 'package:modular_beyond/src/presenter/errors/errors.dart';
 import 'package:modular_beyond/src/presenter/navigation/modular_book.dart';
 import 'package:modular_beyond/src/presenter/navigation/modular_page.dart';
 import 'package:modular_beyond/src/presenter/navigation/modular_route_information_parser.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:modular_core/modular_core.dart';
 import 'package:result_dart/result_dart.dart';
 

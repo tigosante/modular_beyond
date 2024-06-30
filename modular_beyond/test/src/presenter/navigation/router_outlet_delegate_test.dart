@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:modular_beyond/src/presenter/models/route.dart';
 import 'package:modular_beyond/src/presenter/navigation/custom_navigator.dart';
 import 'package:modular_beyond/src/presenter/navigation/modular_book.dart';
 import 'package:modular_beyond/src/presenter/navigation/modular_router_delegate.dart';
 import 'package:modular_beyond/src/presenter/navigation/router_outlet_delegate.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 
 import '../modular_base_test.dart';
 import 'modular_page_test.dart';

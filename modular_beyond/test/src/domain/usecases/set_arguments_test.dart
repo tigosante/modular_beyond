@@ -1,6 +1,6 @@
-import 'package:modular_beyond/src/domain/usecases/set_arguments.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:modular_beyond/src/domain/usecases/set_arguments.dart';
 import 'package:modular_core/modular_core.dart';
 import 'package:result_dart/result_dart.dart';
 

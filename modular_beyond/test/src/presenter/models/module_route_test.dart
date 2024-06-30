@@ -1,5 +1,5 @@
-import 'package:modular_beyond/modular_beyond.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:modular_beyond/modular_beyond.dart';
 
 import '../../mocks/mocks.dart';
 

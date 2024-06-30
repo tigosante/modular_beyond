@@ -1,7 +1,7 @@
+import 'package:mocktail/mocktail.dart';
 import 'package:modular_beyond/src/domain/services/bind_service.dart';
 import 'package:modular_beyond/src/domain/services/module_service.dart';
 import 'package:modular_beyond/src/domain/services/route_service.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:modular_core/modular_core.dart';
 
 class BindServiceMock extends Mock implements BindService {}

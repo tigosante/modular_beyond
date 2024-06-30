@@ -1,9 +1,9 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:modular_beyond/modular_beyond.dart';
 import 'package:modular_beyond/src/domain/errors/errors.dart';
 import 'package:modular_beyond/src/domain/services/bind_service.dart';
 import 'package:modular_beyond/src/infra/services/bind_service_impl.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 
 import '../../mocks/mocks.dart';
 

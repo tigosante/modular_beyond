@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:modular_beyond/modular_beyond.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:modular_beyond/modular_beyond.dart';
 
 void main() {
   test('route child', () {

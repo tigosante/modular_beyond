@@ -1,5 +1,5 @@
-import 'package:modular_beyond/src/infra/services/url_service/url_service.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:modular_beyond/src/infra/services/url_service/url_service.dart';
 
 void main() {
   test('html url service ...', () {

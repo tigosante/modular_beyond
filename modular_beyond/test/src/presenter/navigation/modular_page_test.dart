@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:modular_beyond/src/presenter/errors/errors.dart';
 import 'package:modular_beyond/src/presenter/models/modular_args.dart';
 import 'package:modular_beyond/src/presenter/models/route.dart';
 import 'package:modular_beyond/src/presenter/navigation/modular_page.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:modular_core/modular_core.dart';
 
 import '../modular_base_test.dart';
