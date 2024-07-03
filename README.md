@@ -14,14 +14,6 @@ If it's for the Flutterando version of the template just send a message to us (o
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://raw.githubusercontent.com/Flutterando/modular/master/modular_beyond.png" alt="Logo" width="170" style=" padding-right: 30px;">
-  </a>
-  <a href="https://github.com/Flutterando/README-Template/">
-    <img src="https://raw.githubusercontent.com/Flutterando/README-Template/master/readme_assets/logo-flutterando.png" alt="Logo" width="95">
-  </a>
-
-  <br />
   <p align="center">
     Welcome to Modular Beyond!
     A smart project structure.
