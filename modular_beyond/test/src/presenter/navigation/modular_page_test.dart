@@ -69,6 +69,7 @@ void main() {
     when(() => route.isFullscreenDialog).thenReturn(true);
     when(() => route.uri).thenReturn(Uri.parse('/'));
     when(() => route.transition).thenReturn(TransitionType.noTransition);
+
     final page = ModularPage(args: args, flags: ModularFlags(), route: route);
     final pageRoute = page.createRoute(context);
     expect(pageRoute, isA<NoTransitionMaterialPageRoute>());
@@ -123,6 +124,7 @@ void main() {
     final transitionMap = ParallelRoute.empty().transitions;
     final anim = AnimationMock<double>();
     when(() => anim.status).thenReturn(AnimationStatus.completed);
+
     final keys = transitionMap.keys
         .where((k) => k != TransitionType.custom)
         .where((k) => k != TransitionType.defaultTransition)
@@ -169,6 +171,7 @@ void main() {
     when(() => route.maintainState).thenReturn(true);
     when(() => route.isFullscreenDialog).thenReturn(true);
     when(() => route.transition).thenReturn(TransitionType.defaultTransition);
+
     final page = ModularPage(args: args, flags: ModularFlags(), route: route);
     expect(page.createRoute(context), isA<Route>());
     expect(page.route.isFullscreenDialog, equals(true));
