@@ -22,6 +22,7 @@ export 'package:modular_core/modular_core.dart'
         BindConfig,
         Injector,
         AutoInjectorException,
+        IgnoreDefaultsConfig,
         ModularArguments,
         setPrintResolver;
 
