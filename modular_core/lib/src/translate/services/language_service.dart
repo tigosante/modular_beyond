@@ -60,9 +60,8 @@ class LanguageService {
       return false;
     }
 
-    final folderPath = '${config.fullPath}/';
     final fileName = '${_locale.toLanguageTag().toLowerCase()}.json';
-    final fullPath = '$folderPath/$fileName'.replaceAll('//', '/');
+    final fullPath = '${config.fullPath}/$fileName'.replaceAll('//', '/');
 
     try {
       final jsonString = await rootBundle.loadString(fullPath);

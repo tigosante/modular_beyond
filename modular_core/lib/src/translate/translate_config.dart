@@ -40,7 +40,7 @@ class TranslateConfigImpl implements TranslateConfig {
 
   @override
   String get fullPath =>
-      _isMainApp ? _getAssetsPath : '$_moduleName/$_getAssetsPath/';
+      _isMainApp ? _getAssetsPath : 'packages/$_moduleName/$_getAssetsPath/';
 
   @override
   String get assetsPath => _getAssetsPath;
