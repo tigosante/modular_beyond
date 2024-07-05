@@ -21,12 +21,12 @@ environment:
   sdk: ">=2.18.0 <3.0.0"
 
 dependencies:
-  dartz: ^0.10.0-nullsafety.2
-  flutter_mobx: ^2.0.1
-  flutter_triple: ^2.1.4
-  http: ^1.1.0
-  modular_beyond:
-    path: ../
+  shared:
+    path: packages/shared/
+  search:
+    path: packages/search/
+  user_details:
+    path: packages/user_details/
   alice: ^0.4.2
   bloc: ^8.0.3
   flutter:
@@ -49,8 +49,7 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   uses-material-design: true
-  assets:
-    - assets/languages/
+
 vars:
   clean: flutter clean
   get: flutter pub get
