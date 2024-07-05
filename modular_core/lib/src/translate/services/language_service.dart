@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/widgets.dart'
-    show BuildContext, Locale, Localizations, debugPrint;
+    show BuildContext, Locale, Localizations, debugPrint, visibleForTesting;
 import 'package:modular_core/modular_core.dart';
 
 class LanguageService {
@@ -19,13 +19,30 @@ class LanguageService {
 
   final TranslateGets? _translateDefault;
 
+  static LanguageService? _testInstance;
+
   static final Map<String, Map<String, String>> _translateData = {};
 
+  @visibleForTesting
+  static final Map<String, Map<String, String>> translateDataTest = {};
+
   static LanguageService? of(BuildContext context) {
+    if (_testInstance != null) {
+      return _testInstance;
+    }
     return Localizations.of<LanguageService>(context, LanguageService);
   }
 
+  @visibleForTesting
+  // ignore: use_setters_to_change_properties
+  static void setTestInstance(LanguageService instance) {
+    _testInstance = instance;
+  }
+
   Map<String, String>? getTranslateJson(String key) {
+    if (translateDataTest.isNotEmpty) {
+      return translateDataTest[key];
+    }
     return _translateData[key];
   }
 
