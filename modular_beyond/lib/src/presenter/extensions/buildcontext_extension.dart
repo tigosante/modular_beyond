@@ -11,10 +11,8 @@ void popCurrentContext() {
 
 extension BuildcontextExtension on BuildContext {
   void setCurrentContext() {
-    if (_contextStack.isNotEmpty) {
-      if (_contextStack.last.widget.hashCode == widget.hashCode) {
-        return;
-      }
+    if (_contextStack.lastOrNull?.widget.hashCode == widget.hashCode) {
+      return;
     }
     _contextStack.add(this);
   }
