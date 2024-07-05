@@ -26,6 +26,7 @@ part 'src/route/middleware.dart';
 part 'src/route/route.dart';
 part 'src/route/route_manager.dart';
 part 'src/tracker.dart';
+part 'src/translate/ignore_defaults_config.dart';
 // translate
 part 'src/translate/modular_localizations_delegate.dart';
 part 'src/translate/translate.dart';

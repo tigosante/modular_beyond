@@ -7,7 +7,8 @@ class TranslateConfigImpl implements TranslateConfig {
   bool _assetsIsSet = false;
   bool _localesIsSet = false;
   bool _moduleNameIsSet = false;
-  bool _isIgnoreDefault = false;
+  IgnoreDefaultsConfig _ignoreDefault =
+      IgnoreDefaultsConfig(ignoreAssets: false, ignoreLocales: false);
 
   String? _moduleAlias;
   String _moduleName = '';
@@ -26,11 +27,11 @@ class TranslateConfigImpl implements TranslateConfig {
       _assetsIsSet ||
       _localesIsSet ||
       _moduleNameIsSet ||
-      _isIgnoreDefault ||
+      _ignoreDefault.isIgnore ||
       _isMainApp;
 
   @override
-  bool get isIgnoreDefault => _isIgnoreDefault;
+  IgnoreDefaultsConfig get ignoreDefault => _ignoreDefault;
 
   @override
   String get alias => _moduleAlias ?? _moduleName;
@@ -53,7 +54,7 @@ class TranslateConfigImpl implements TranslateConfig {
     List<Locale> supoortedLocales = const [],
     String assetsPath = assetsPathDefault,
     String alias = aliasMainModuleDefault,
-    bool ignoreDefault = false,
+    IgnoreDefaultsConfig? ignoreDefault,
   }) {
     assert(assetsPath.isNotEmpty, "Assets path can't be empty");
     _isMainApp = true;
@@ -63,7 +64,7 @@ class TranslateConfigImpl implements TranslateConfig {
     _assetsIsSet = true;
     _supoortedLocales = supoortedLocales;
     _localesIsSet = true;
-    _isIgnoreDefault = ignoreDefault;
+    _ignoreDefault = ignoreDefault ?? _ignoreDefault;
   }
 
   @override
@@ -72,7 +73,7 @@ class TranslateConfigImpl implements TranslateConfig {
     List<Locale> supoortedLocales = const [],
     String assetsPath = assetsPathDefault,
     String? alias,
-    bool ignoreDefault = false,
+    IgnoreDefaultsConfig? ignoreDefault,
   }) {
     assert(name.isNotEmpty, "Module name can't be empty");
     assert(assetsPath.isNotEmpty, "Assets path can't be empty");
@@ -83,7 +84,7 @@ class TranslateConfigImpl implements TranslateConfig {
     _assetsIsSet = true;
     _supoortedLocales = supoortedLocales;
     _localesIsSet = true;
-    _isIgnoreDefault = ignoreDefault;
+    _ignoreDefault = ignoreDefault ?? _ignoreDefault;
   }
 
   @override
@@ -110,6 +111,6 @@ class TranslateConfigImpl implements TranslateConfig {
       .._assetsIsSet = assetsIsSet
       .._localesIsSet = localesIsSet
       .._moduleNameIsSet = _moduleNameIsSet
-      .._isIgnoreDefault = _isIgnoreDefault;
+      .._ignoreDefault = _ignoreDefault;
   }
 }

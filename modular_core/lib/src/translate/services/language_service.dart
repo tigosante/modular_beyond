@@ -44,12 +44,11 @@ class LanguageService {
 
     return _translates.map(
       (config) {
+        final isIgnoreDefault = config.ignoreDefault.isIgnore;
         return config.copyWith(
-          assetsPath:
-              config.isIgnoreDefault ? null : _translateDefault?.assetsPath,
-          supoortedLocales: config.isIgnoreDefault
-              ? null
-              : _translateDefault?.supoortedLocales,
+          assetsPath: isIgnoreDefault ? null : _translateDefault?.assetsPath,
+          supoortedLocales:
+              isIgnoreDefault ? null : _translateDefault?.supoortedLocales,
         );
       },
     ).toList();

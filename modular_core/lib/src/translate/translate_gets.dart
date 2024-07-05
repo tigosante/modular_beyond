@@ -2,7 +2,7 @@ part of '../../modular_core.dart';
 
 abstract class TranslateGets {
   bool get isStarted;
-  bool get isIgnoreDefault;
+  IgnoreDefaultsConfig get ignoreDefault;
 
   String get alias;
   String get fullPath;

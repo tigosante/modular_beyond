@@ -29,7 +29,7 @@ abstract class Translate {
     List<Locale> supoortedLocales,
     String assetsPath = assetsPathDefault,
     String alias = aliasMainModuleDefault,
-    bool ignoreDefault,
+    IgnoreDefaultsConfig? ignoreDefault,
   });
 
   /// **Set module configs**
@@ -62,6 +62,6 @@ abstract class Translate {
     List<Locale> supoortedLocales,
     String assetsPath = assetsPathDefault,
     String? alias,
-    bool ignoreDefault,
+    IgnoreDefaultsConfig? ignoreDefault,
   });
 }
