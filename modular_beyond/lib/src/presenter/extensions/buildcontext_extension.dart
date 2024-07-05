@@ -4,7 +4,9 @@ final List<BuildContext> _contextStack = [];
 BuildContext get currentContext => _contextStack.last;
 
 void popCurrentContext() {
-  _contextStack.removeLast();
+  if (_contextStack.length > 1) {
+    _contextStack.removeLast();
+  }
 }
 
 extension BuildcontextExtension on BuildContext {
