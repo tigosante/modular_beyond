@@ -8,7 +8,7 @@ class TranslateConfigImpl implements TranslateConfig {
   bool _localesIsSet = false;
   bool _moduleNameIsSet = false;
   IgnoreDefaultsConfig _ignoreDefault =
-      IgnoreDefaultsConfig(ignoreAssets: false, ignoreLocales: false);
+      IgnoreDefaultsConfig(assets: false, locales: false);
 
   String? _moduleAlias;
   String _moduleName = '';
@@ -31,7 +31,7 @@ class TranslateConfigImpl implements TranslateConfig {
       _isMainApp;
 
   @override
-  IgnoreDefaultsConfig get ignoreDefault => _ignoreDefault;
+  IgnoreDefaultsConfig get ignore => _ignoreDefault;
 
   @override
   String get alias => _moduleAlias ?? _moduleName;

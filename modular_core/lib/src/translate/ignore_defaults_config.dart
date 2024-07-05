@@ -2,24 +2,24 @@ part of '../../modular_core.dart';
 
 class IgnoreDefaultsConfig {
   IgnoreDefaultsConfig({
-    required this.ignoreAssets,
-    required this.ignoreLocales,
+    required this.assets,
+    required this.locales,
   });
 
-  /// Returns true if both [ignoreAssets] and [ignoreLocales] are true.
-  bool get isIgnore => ignoreAssets && ignoreLocales;
+  /// Returns true if both [assets] and [locales] are true.
+  bool get isIgnore => assets || locales;
 
   /// Ignore assets path.
-  bool ignoreAssets;
+  bool assets;
 
   /// Ignore locales.
-  bool ignoreLocales;
+  bool locales;
 
   factory IgnoreDefaultsConfig.assets() {
-    return IgnoreDefaultsConfig(ignoreAssets: true, ignoreLocales: false);
+    return IgnoreDefaultsConfig(assets: true, locales: false);
   }
 
   factory IgnoreDefaultsConfig.lcales() {
-    return IgnoreDefaultsConfig(ignoreAssets: false, ignoreLocales: true);
+    return IgnoreDefaultsConfig(assets: false, locales: true);
   }
 }

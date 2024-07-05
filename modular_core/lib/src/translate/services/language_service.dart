@@ -59,16 +59,17 @@ class LanguageService {
       return _translates;
     }
 
-    return _translates.map(
-      (config) {
-        final isIgnoreDefault = config.ignoreDefault.isIgnore;
-        return config.copyWith(
-          assetsPath: isIgnoreDefault ? null : _translateDefault?.assetsPath,
-          supoortedLocales:
-              isIgnoreDefault ? null : _translateDefault?.supoortedLocales,
-        );
-      },
-    ).toList();
+    return _translates
+        .map(
+          (config) => config.copyWith(
+            assetsPath:
+                config.ignore.assets ? null : _translateDefault?.assetsPath,
+            supoortedLocales: config.ignore.locales
+                ? null
+                : _translateDefault?.supoortedLocales,
+          ),
+        )
+        .toList();
   }
 
   Future<bool> _loadData(TranslateGets config) async {
