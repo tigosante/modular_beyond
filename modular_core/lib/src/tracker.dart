@@ -6,7 +6,7 @@ abstract class Tracker {
   /// Service Injector instancia
   AutoInjector get injector;
 
-  TranslateCombinedService get translateModule;
+  I18nCombinedService get i18nModule;
 
   /// Initial Module
   Module get module;
@@ -19,9 +19,9 @@ abstract class Tracker {
 
   factory Tracker(
     AutoInjector injector,
-    TranslateCombinedService translateModule,
+    I18nCombinedService i18nModule,
   ) =>
-      _Tracker(injector, translateModule);
+      _Tracker(injector, i18nModule);
 
   /// Searches for a route by name or context throughout the tree.
   FutureOr<ModularRoute?> findRoute(
@@ -50,7 +50,7 @@ abstract class Tracker {
   /// Remove registers manually;
   void unbindModule(String moduleName);
 
-  List<TranslateConfig> getTranslateData();
+  List<I18nConfig> getI18nData();
 
   /// Finishes all trees.
   void finishApp();
@@ -64,7 +64,7 @@ class _Tracker implements Tracker {
   final AutoInjector injector;
 
   @override
-  final TranslateCombinedService translateModule;
+  final I18nCombinedService i18nModule;
 
   final _disposeTags = <Type, List<String>>{};
   final _importedInjector = <String, AutoInjector>{};
@@ -82,10 +82,10 @@ class _Tracker implements Tracker {
   @visibleForTesting
   final routeMap = <ModularKey, ModularRoute>{};
 
-  _Tracker(this.injector, this.translateModule);
+  _Tracker(this.injector, this.i18nModule);
 
   var _arguments = ModularArguments.empty();
-  final List<TranslateConfig> _translates = [];
+  final List<I18nConfig> _i18nList = [];
 
   @override
   ModularArguments get arguments => _arguments;
@@ -183,9 +183,9 @@ class _Tracker implements Tracker {
         unbindModule(key.toString());
       }
     }
-    final translate = _getTranslateConfig(route.module);
+    final translate = _getI18nConfig(route.module);
     if (translate.isStarted) {
-      translateModule.disposeModuleConfig(translate);
+      i18nModule.disposeModuleConfig(translate);
     }
   }
 
@@ -221,9 +221,9 @@ class _Tracker implements Tracker {
 
   @override
   void bindModule(Module module, [String? tag]) {
-    final translate = _getTranslateConfig(module);
+    final translate = _getI18nConfig(module);
     if (translate.isStarted) {
-      translateModule.setModuleConfig(translate);
+      i18nModule.setModuleConfig(translate);
     }
 
     final newInjector = _createInjector(module, tag);
@@ -238,8 +238,8 @@ class _Tracker implements Tracker {
   }
 
   @override
-  List<TranslateConfig> getTranslateData() {
-    return _translates;
+  List<I18nConfig> getI18nData() {
+    return _i18nList;
   }
 
   @override
@@ -249,9 +249,9 @@ class _Tracker implements Tracker {
     return dead != null;
   }
 
-  TranslateConfig _getTranslateConfig(Module? module) {
-    final translate = TranslateConfigImpl();
-    module?.translate(translate);
+  I18nConfig _getI18nConfig(Module? module) {
+    final translate = I18nConfigImpl();
+    module?.i18n(translate);
     return translate;
   }
 
@@ -334,9 +334,9 @@ class _Tracker implements Tracker {
   }
 
   void _setTranslateData(Module module) {
-    final translate = _getTranslateConfig(module);
+    final translate = _getI18nConfig(module);
     if (translate.isStarted) {
-      _translates.add(translate);
+      _i18nList.add(translate);
       supportedLocalesVariable.addAll(translate.supoortedLocales);
     }
   }
