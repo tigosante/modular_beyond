@@ -11,16 +11,19 @@ class ModularLocalizationsDelegate
     _traslateDefault = value;
   }
 
-  List<Locale> get _supportedLocales {
-    final locales = translates
-        .map((element) => element.supoortedLocales)
-        .expand((list) => list);
-    return (_traslateDefault?.supoortedLocales ?? [])..addAll(locales);
+  List<Locale> get supportedLocales {
+    return (translates
+            .map((element) => element.supoortedLocales)
+            .expand((list) => list)
+            .toList()
+          ..addAll(_traslateDefault?.supoortedLocales ?? []))
+        .toSet()
+        .toList();
   }
 
   @override
   bool isSupported(Locale locale) {
-    return _supportedLocales.toSet().toList().contains(locale);
+    return supportedLocales.contains(locale);
   }
 
   @override
