@@ -45,6 +45,9 @@ abstract class IModularBase {
   /// Modular.navigatorDelegate = MyNavigatorDelegate()
   IModularNavigator? navigatorDelegate;
 
+  /// List of supported locales
+  List<Locale> get supportedLocales;
+
   /// Request an instance by [Type]
   B get<B extends Object>({String? key});
 
@@ -122,6 +125,8 @@ class ModularBase implements IModularBase {
 
   String _initialRoutePath = '/';
 
+  final _supportedLocales = <Locale>[];
+
   @visibleForTesting
   @override
   String get initialRoutePath => _initialRoutePath;
@@ -178,10 +183,7 @@ class ModularBase implements IModularBase {
       startModule(module).getOrThrow();
       printResolverFunc?.call('${module.runtimeType} started!');
       _moduleHasBeenStarted = true;
-      final translateData = getTranslateData().getOrNull();
-      if (translateData?.isNotEmpty ?? false) {
-        _localizationsDelegate.translates.addAll(translateData!);
-      }
+      _configTranslate();
     } else {
       throw ModuleStartedException(
         'Module ${module.runtimeType} is already started',
@@ -199,6 +201,9 @@ class ModularBase implements IModularBase {
   @override
   LocalizationsDelegate<LanguageService> get localizationsDelegate =>
       _localizationsDelegate;
+
+  @override
+  List<Locale> get supportedLocales => _supportedLocales;
 
   final flags = ModularFlags();
 
@@ -251,5 +256,13 @@ class ModularBase implements IModularBase {
   @override
   void replaceInstance<T>(T instance, {String? key}) {
     replaceInstanceUsecase.call<T>(instance, key).getOrThrow();
+  }
+
+  void _configTranslate() {
+    final translateData = getTranslateData().getOrNull();
+    if (translateData?.isNotEmpty ?? false) {
+      _localizationsDelegate.translates.addAll(translateData!);
+      _supportedLocales.addAll(_localizationsDelegate.supportedLocales);
+    }
   }
 }
