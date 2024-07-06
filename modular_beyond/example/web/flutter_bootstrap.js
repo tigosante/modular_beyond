@@ -4,7 +4,10 @@
 _flutter.loader.load({
   onEntrypointLoaded: async function (engineInitializer) {
     const appRunner = await engineInitializer.initializeEngine();
-    document.getElementsByClassName('container')[0].remove();
+    const container = document.getElementsByClassName('container')
+    if (container.length > 0) {
+      container[0].remove();
+    }
     await appRunner.runApp();
   } 
 })
