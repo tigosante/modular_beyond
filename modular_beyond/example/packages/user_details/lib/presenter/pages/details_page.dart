@@ -24,7 +24,7 @@ class _DetailsPageState extends State<DetailsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.result != null
-            ? "details_title".translate([widget.result!.nickname])
+            ? "details_title".i18n([widget.result!.nickname])
             : 'Make a search'),
       ),
       body: widget.result != null

@@ -8,7 +8,7 @@ class AppModule extends Module {
   List<Module> get imports => [SharedModule()];
 
   @override
-  void translate(Translate t) {
+  void i18n(I18n t) {
     t.mainModule(
       assetsPath: 'assets/langs',
       ignoreDefault: IgnoreDefaultsConfig.assets(),

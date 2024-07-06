@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modular_beyond/src/domain/usecases/get_translate_data.dart';
+import 'package:modular_beyond/src/domain/usecases/get_i18n_data.dart';
 import 'package:modular_beyond/src/domain/usecases/replace_instance.dart';
 import 'package:modular_beyond/src/presenter/extensions/buildcontext_extension.dart';
 import 'package:modular_core/modular_core.dart';
@@ -45,11 +45,11 @@ final injector = AutoInjector(
     i.add<BindService>(BindServiceImpl.new);
     i.add<ModuleService>(ModuleServiceImpl.new);
     i.add<RouteService>(RouteServiceImpl.new);
-    i.addLazySingleton<TranslateCombinedService>(
-      () => TranslateServiceImpl(() => currentContext)..setInstance(),
+    i.addLazySingleton<I18nCombinedService>(
+      () => I18nCombinedServiceImpl(() => currentContext)..setInstance(),
     );
-    i.addLazySingleton<TranslateService>(
-      () => i.get<TranslateCombinedService>(),
+    i.addLazySingleton<I18nService>(
+      () => i.get<I18nCombinedService>(),
     );
     i.add<UrlService>(UrlService.create);
     //domain
@@ -65,7 +65,7 @@ final injector = AutoInjector(
     i.add<UnbindModule>(UnbindModuleImpl.new);
     i.add<ReportPush>(ReportPushImpl.new);
     i.add<ReplaceInstance>(ReplaceInstanceImpl.new);
-    i.add<GetTranslateData>(GetTranslateDataImpl.new);
+    i.add<GetI18nData>(GetI18nDataImpl.new);
     //presenter
     i.addInstance(GlobalKey<NavigatorState>());
     i.addSingleton<ModularRouteInformationParser>(

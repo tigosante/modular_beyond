@@ -12,7 +12,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget _buildList(List<ResultEntity> list) {
     if (list.isEmpty) {
       return Center(
-        child: Text('empty_list'.translate()),
+        child: Text('empty_list'.i18n()),
       );
     }
 
@@ -46,13 +46,7 @@ class _SearchPageState extends State<SearchPage> {
         child: Text('Github error'),
       );
     } else {
-      return Center(
-        // para fazer a tradução basta usar a extension translate.
-        // pode passar parâmetros para a tradução, seguindo o padrão %s.
-        // Ex: 'error'.translate(['error message']);
-        // "Erro %s" => "Erro error message"
-        child: Text('search_title'.translate()),
-      );
+      return Center(child: Text('search_title'.i18n()));
     }
   }
 
@@ -62,7 +56,7 @@ class _SearchPageState extends State<SearchPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("search_title".translate()),
+        title: Text("search_title".i18n()),
       ),
       body: Column(
         children: <Widget>[

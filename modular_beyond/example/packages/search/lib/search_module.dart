@@ -4,7 +4,7 @@ import 'package:user_details/user_details.dart';
 
 class SearchModule extends Module {
   @override
-  void translate(Translate t) {
+  void i18n(I18n t) {
     t.module("search");
   }
 

@@ -33,7 +33,7 @@ class ModuleServiceImpl extends ModuleService {
   }
 
   @override
-  Result<List<TranslateGets>, ModularError> getTranslateData() {
-    return Success(tracker.getTranslateData());
+  Result<List<I18nGets>, ModularError> getI18nData() {
+    return Success(tracker.getI18nData());
   }
 }

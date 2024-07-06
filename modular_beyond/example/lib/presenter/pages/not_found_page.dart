@@ -9,7 +9,7 @@ class NotFoundPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "not_found_page_title".translate(),
+          "not_found_page_title".i18n(),
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
@@ -21,7 +21,7 @@ class NotFoundPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "page_not_found".translate(),
+              "page_not_found".i18n(),
               style: Theme.of(context)
                   .textTheme
                   .displaySmall
@@ -31,7 +31,7 @@ class NotFoundPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Modular.to.navigate('/'),
               child: Text(
-                "go_home".translate(),
+                "go_home".i18n(),
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge

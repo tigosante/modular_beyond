@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:modular_beyond/modular_beyond.dart';
 import 'package:modular_beyond/src/domain/usecases/bind_module.dart';
-import 'package:modular_beyond/src/domain/usecases/get_translate_data.dart';
+import 'package:modular_beyond/src/domain/usecases/get_i18n_data.dart';
 import 'package:modular_beyond/src/domain/usecases/replace_instance.dart';
 import 'package:modular_beyond/src/domain/usecases/unbind_module.dart';
 import 'package:modular_core/modular_core.dart';
@@ -107,7 +107,7 @@ class ModularBase implements IModularBase {
   final GetBind getBind;
   final GetArguments getArguments;
   final SetArguments setArgumentsUsecase;
-  final GetTranslateData getTranslateData;
+  final GetI18nData getI18nData;
   final StartModule startModule;
   final BindModule bindModuleUsecase;
   final UnbindModule unbindModuleUsecase;
@@ -136,7 +136,7 @@ class ModularBase implements IModularBase {
     required this.routerDelegate,
     required this.disposeBind,
     required this.getArguments,
-    required this.getTranslateData,
+    required this.getI18nData,
     required this.finishModule,
     required this.getBind,
     required this.startModule,
@@ -152,7 +152,7 @@ class ModularBase implements IModularBase {
     String? assetsPath,
     List<Locale>? supoortedLocales,
   }) {
-    ModularLocalizationsDelegate.traslateDefault = TranslateConfigImpl()
+    ModularLocalizationsDelegate.i18nDefault = I18nConfigImpl()
         .copyWith(assetsPath: assetsPath, supoortedLocales: supoortedLocales);
   }
 
@@ -259,9 +259,9 @@ class ModularBase implements IModularBase {
   }
 
   void _configTranslate() {
-    final translateData = getTranslateData().getOrNull();
-    if (translateData?.isNotEmpty ?? false) {
-      _localizationsDelegate.translates.addAll(translateData!);
+    final i18nList = getI18nData().getOrNull();
+    if (i18nList?.isNotEmpty ?? false) {
+      _localizationsDelegate.i18nList.addAll(i18nList!);
       _supportedLocales.addAll(_localizationsDelegate.supportedLocales);
     }
   }

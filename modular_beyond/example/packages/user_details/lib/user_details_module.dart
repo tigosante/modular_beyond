@@ -4,7 +4,7 @@ import 'package:user_details/presenter/pages/details_page.dart';
 
 class UserDetailsModule extends Module {
   @override
-  void translate(Translate t) {
+  void i18n(I18n t) {
     t.module("user_details");
   }
 

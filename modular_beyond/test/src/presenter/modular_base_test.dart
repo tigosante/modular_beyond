@@ -11,8 +11,8 @@ import 'package:modular_beyond/src/domain/usecases/dispose_bind.dart';
 import 'package:modular_beyond/src/domain/usecases/finish_module.dart';
 import 'package:modular_beyond/src/domain/usecases/get_arguments.dart';
 import 'package:modular_beyond/src/domain/usecases/get_bind.dart';
+import 'package:modular_beyond/src/domain/usecases/get_i18n_data.dart';
 import 'package:modular_beyond/src/domain/usecases/get_route.dart';
-import 'package:modular_beyond/src/domain/usecases/get_translate_data.dart';
 import 'package:modular_beyond/src/domain/usecases/replace_instance.dart';
 import 'package:modular_beyond/src/domain/usecases/set_arguments.dart';
 import 'package:modular_beyond/src/domain/usecases/start_module.dart';
@@ -63,7 +63,7 @@ class ModularRouterDelegateMock extends Mock implements ModularRouterDelegate {}
 
 class ModularErrorMock extends Mock implements ModularError {}
 
-class GetTranslateDataMock extends Mock implements GetTranslateData {}
+class GetI18nDataMock extends Mock implements GetI18nData {}
 
 void main() {
   final disposeBind = DisposeBindMock();
@@ -77,7 +77,7 @@ void main() {
   final routerDelegate = ModularRouterDelegateMock();
   final replaceInstance = ReplaceInstanceMock();
   final bindModule = BindModuleMock();
-  final getTranslateData = GetTranslateDataMock();
+  final getI18nData = GetI18nDataMock();
   final unbindModule = UnbindModuleMock();
   late IModularBase modularBase;
 
@@ -100,7 +100,7 @@ void main() {
       bindModuleUsecase: bindModule,
       replaceInstanceUsecase: replaceInstance,
       unbindModuleUsecase: unbindModule,
-      getTranslateData: getTranslateData,
+      getI18nData: getI18nData,
     );
 
     reset(disposeBind);
@@ -125,7 +125,7 @@ void main() {
     setPrintResolver((text) {});
     final module = ModuleMock();
     when(() => startModule.call(module)).thenReturn(const Success(unit));
-    when(getTranslateData.call).thenReturn(const Success([]));
+    when(getI18nData.call).thenReturn(const Success([]));
     modularBase.init(module);
     verify(() => startModule.call(module));
     expect(

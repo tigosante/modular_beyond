@@ -5,6 +5,6 @@ abstract class ModuleService {
   Result<Unit, ModularError> start(Module module);
   Result<Unit, ModularError> bind(Module module, [String? tag]);
   Result<Unit, ModularError> unbind<T extends Module>({String? type});
-  Result<List<TranslateGets>, ModularError> getTranslateData();
+  Result<List<I18nGets>, ModularError> getI18nData();
   Result<Unit, ModularError> finish();
 }
