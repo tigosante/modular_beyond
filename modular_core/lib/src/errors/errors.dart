@@ -18,3 +18,29 @@ class TrackerNotInitiated extends ModularError {
     StackTrace? stackTrace,
   ]) : super(message, stackTrace);
 }
+
+class I18nDataIsEmpty extends ModularError {
+  const I18nDataIsEmpty([StackTrace? stackTrace])
+      : super('i18n - data is empty', stackTrace);
+}
+
+class I18nCurrentKeyNotFound extends ModularError {
+  const I18nCurrentKeyNotFound(this.currentKey, [StackTrace? stackTrace])
+      : super('i18n - currentKey not found > key $currentKey', stackTrace);
+
+  final String currentKey;
+}
+
+class I18nCurrentContextNotFound extends ModularError {
+  const I18nCurrentContextNotFound(this.currentKey, [StackTrace? stackTrace])
+      : super('i18n - context not found', stackTrace);
+
+  final String currentKey;
+}
+
+class I18nCurrentDataNotFound extends ModularError {
+  const I18nCurrentDataNotFound(this.currentKey, [StackTrace? stackTrace])
+      : super('i18n - data not found > key: $currentKey', stackTrace);
+
+  final String currentKey;
+}
