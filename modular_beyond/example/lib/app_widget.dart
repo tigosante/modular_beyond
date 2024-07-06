@@ -13,10 +13,9 @@ class AppWidget extends StatelessWidget {
     Modular.routerDelegate.setNavigatorKey(alice.getNavigatorKey());
     return MaterialApp.router(
       title: 'Flutter Slidy',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       routerConfig: Modular.routerConfig,
+      supportedLocales: Modular.supportedLocales,
       localizationsDelegates: [
         Modular.localizationsDelegate,
         ...GlobalMaterialLocalizations.delegates,
