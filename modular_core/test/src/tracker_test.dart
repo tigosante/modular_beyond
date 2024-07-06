@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:modular_core/modular_core.dart';
 import 'package:test/test.dart';
 
-import 'translate/mocks/mock_buildcontext.dart';
+import 'internationalization/mocks/mock_buildcontext.dart';
 
 void main() {
   late Tracker tracker;
@@ -19,7 +19,7 @@ void main() {
 
   setUp(() {
     final injector = AutoInjector(tag: 'Test')..commit();
-    tracker = Tracker(injector, TranslateServiceImpl(MockBuildContext.new));
+    tracker = Tracker(injector, I18nCombinedServiceImpl(MockBuildContext.new));
 
     final module = MyModule();
     manager.allRoutes;
